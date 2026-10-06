@@ -1,0 +1,228 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/display/**",
+              "components/forms/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Pretendard))/i]",
+        "message": "Font not provided by the design system. Available: Pretendard."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|children|key|ref|className|style|children)$/]",
+        "message": "<Badge> doesn't accept that prop. Declared props: tone, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Badge'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:primary|green|pink|neutral)$/]",
+        "message": "<Badge> tone must be one of 'primary' | 'green' | 'pink' | 'neutral'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|disabled|onClick|children|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, disabled, onClick, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|secondary|ghost)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'secondary' | 'ghost'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:featured|children|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: featured, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|placeholder|error|helperText|value|onChange|key|ref|className|style|children)$/]",
+        "message": "<Input> doesn't accept that prop. Declared props: label, placeholder, error, helperText, value, onChange."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Badge": {
+        "replaces": []
+      },
+      "Button": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "Input": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--border-default",
+      "--border-focus",
+      "--border-hover",
+      "--container-margin-desktop",
+      "--container-margin-mobile",
+      "--container-max",
+      "--font-body-lh",
+      "--font-body-size",
+      "--font-body-weight",
+      "--font-caption-lh",
+      "--font-caption-size",
+      "--font-caption-weight",
+      "--font-display-lh",
+      "--font-display-size",
+      "--font-display-weight",
+      "--font-family-base",
+      "--font-h1-lh",
+      "--font-h1-size",
+      "--font-h1-weight",
+      "--font-h2-lh",
+      "--font-h2-size",
+      "--font-h2-weight",
+      "--font-h3-lh",
+      "--font-h3-size",
+      "--font-h3-weight",
+      "--grid-gutter",
+      "--neutral-0",
+      "--neutral-100",
+      "--neutral-300",
+      "--neutral-50",
+      "--neutral-500",
+      "--neutral-700",
+      "--neutral-900",
+      "--primary-100",
+      "--primary-300",
+      "--primary-50",
+      "--primary-500",
+      "--primary-700",
+      "--radius-card",
+      "--radius-control",
+      "--radius-pill",
+      "--secondary-green",
+      "--secondary-green-text",
+      "--secondary-green-tint",
+      "--secondary-pink",
+      "--secondary-pink-text",
+      "--secondary-pink-tint",
+      "--semantic-error",
+      "--semantic-info",
+      "--semantic-success",
+      "--semantic-warning",
+      "--space-lg",
+      "--space-md",
+      "--space-sm",
+      "--space-xl",
+      "--space-xs",
+      "--surface-card",
+      "--surface-card-featured",
+      "--surface-page",
+      "--text-body",
+      "--text-heading",
+      "--text-muted"
+    ],
+    "tokenKinds": {
+      "--primary-50": "color",
+      "--primary-100": "color",
+      "--primary-300": "color",
+      "--primary-500": "color",
+      "--primary-700": "color",
+      "--secondary-green": "color",
+      "--secondary-pink": "color",
+      "--secondary-green-tint": "color",
+      "--secondary-green-text": "font",
+      "--secondary-pink-tint": "color",
+      "--secondary-pink-text": "font",
+      "--neutral-0": "color",
+      "--neutral-50": "color",
+      "--neutral-100": "color",
+      "--neutral-300": "color",
+      "--neutral-500": "color",
+      "--neutral-700": "color",
+      "--neutral-900": "color",
+      "--semantic-success": "color",
+      "--semantic-warning": "color",
+      "--semantic-error": "color",
+      "--semantic-info": "color",
+      "--surface-page": "color",
+      "--surface-card": "color",
+      "--surface-card-featured": "color",
+      "--text-heading": "font",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--border-default": "color",
+      "--border-hover": "color",
+      "--border-focus": "color",
+      "--font-family-base": "font",
+      "--font-display-size": "font",
+      "--font-display-lh": "font",
+      "--font-display-weight": "font",
+      "--font-h1-size": "font",
+      "--font-h1-lh": "font",
+      "--font-h1-weight": "font",
+      "--font-h2-size": "font",
+      "--font-h2-lh": "font",
+      "--font-h2-weight": "font",
+      "--font-h3-size": "font",
+      "--font-h3-lh": "font",
+      "--font-h3-weight": "font",
+      "--font-body-size": "font",
+      "--font-body-lh": "font",
+      "--font-body-weight": "font",
+      "--font-caption-size": "font",
+      "--font-caption-lh": "font",
+      "--font-caption-weight": "font",
+      "--space-xs": "spacing",
+      "--space-sm": "spacing",
+      "--space-md": "spacing",
+      "--space-lg": "spacing",
+      "--space-xl": "spacing",
+      "--container-max": "spacing",
+      "--container-margin-desktop": "spacing",
+      "--container-margin-mobile": "spacing",
+      "--grid-gutter": "spacing",
+      "--radius-control": "radius",
+      "--radius-card": "radius",
+      "--radius-pill": "radius"
+    },
+    "fontFamilies": [
+      "Pretendard"
+    ]
+  }
+}

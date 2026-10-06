@@ -1,0 +1,11 @@
+:root{
+--primary-50:#FFF2F2;--primary-100:#FFDADA;--primary-300:#FA6B6E;--primary-500:#ED1D25;--primary-700:#A8151B;
+--secondary-green:#7FC241;--secondary-pink:#FF36AC;
+--secondary-green-tint:#EEF7E4;--secondary-green-text:#2E5716;
+--secondary-pink-tint:#FFE6F4;--secondary-pink-text:#99105F;
+--neutral-0:#FFFFFF;--neutral-50:#FAF9F8;--neutral-100:#F2F0EE;--neutral-300:#D8D4D0;--neutral-500:#9C948C;--neutral-700:#5C554E;--neutral-900:#2A2724;
+--semantic-success:#2E9E5B;--semantic-warning:#F5A623;--semantic-error:#D93025;--semantic-info:#3B82C4;
+--surface-page:var(--neutral-50);--surface-card:var(--neutral-0);--surface-card-featured:var(--primary-50);
+--text-heading:var(--neutral-900);--text-body:var(--neutral-700);--text-muted:var(--neutral-500);
+--border-default:var(--neutral-100);--border-hover:var(--neutral-300);--border-focus:var(--primary-500);
+}
